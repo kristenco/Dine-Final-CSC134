@@ -6,7 +6,7 @@ Item::Item()
 	Item::cost = 0.0;
 }
 
-Item::Item(string name, double cost)
+Item::Item(string& name, double& cost)
 {
 	Item::name = name;
 	Item::cost = cost;

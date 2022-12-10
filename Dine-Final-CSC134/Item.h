@@ -9,7 +9,7 @@ class Item
 {
 public:
     Item();
-    Item(string, double);
+    Item(string&, double&);
     string getName();
     double getCost();
 private:
