@@ -13,7 +13,7 @@ public:
     string getName();
     double getCost();
 private:
-    string name;
+    string itemName;
     double cost;
 };
 

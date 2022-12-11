@@ -1,6 +1,7 @@
 #include "Cart.h"
 #include "Item.h"
 #include<iostream>
+#include<iomanip>
 
 using namespace std;
 
@@ -10,34 +11,27 @@ Cart::Cart(string cartName)
 }
 
 
-bool Cart::Purchase(Item)
+bool Cart::Purchase(Item item)
 {
+	if (Cart::count < 0) {
+		Cart::count = 0;
+	}
 	if (Cart::count == 100) {
 		return false;
 	}
 	else {
+		Cart::arr[Cart::count] = item;
+		Cart::count++;
 		return true;
 	}
+	
 }
 
 void Cart::PrintTotal()
 {
-
-	int arrayLength = sizeof(Cart::arr) / sizeof(int);
-
-	for (int i=0; i < arrayLength; i++)
-	{
-		cout << Cart::arr[i] << endl;
-		/*
-		if (Cart::arr[i].getName() == "") {
-			cout << "empty" << endl;
-		}
-		else {
-			cout << "not empty" << endl;
-		}
-		*/
-		//cout << i << endl;
-		//cout << Cart::arr[i].getName() << endl;
-		//cout << Cart::arr[i].getCost() << endl;
+	double totalCost = 0;
+	for (int i = 0; i < Cart::count; i++) {
+		totalCost += Cart::arr[i].getCost();
 	}
+	cout << "The total cost of the purchase is: $" << fixed << setprecision(2) << totalCost << endl;
 }

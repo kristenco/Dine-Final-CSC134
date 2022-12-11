@@ -9,7 +9,7 @@ int main()
 {
     char choice = ' ';
     string itemName = "";
-    string cartName = "Cart Name";
+    string cartName = "User's Cart";
     double cost = 0.0;
     bool added;
     // create a Cart object

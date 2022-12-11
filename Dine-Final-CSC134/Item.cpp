@@ -2,19 +2,19 @@
 
 Item::Item()
 {
-	Item::name = "";
+	Item::itemName = "";
 	Item::cost = 0.0;
 }
 
 Item::Item(string& name, double& cost)
 {
-	Item::name = name;
+	Item::itemName = name;
 	Item::cost = cost;
 }
 
 string Item::getName()
 {
-	return name;
+	return itemName;
 }
 
 double Item::getCost()
